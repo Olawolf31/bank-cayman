@@ -18,8 +18,14 @@ public class CashAccountService implements TradeAccountService {
 
     @Override
     public void withdraw(String id, BigDecimal amount) {
-        // TODO Auto-generated method stub
+        CashAccount account = retrieveTradeAccount(id);
+        account.setCashBalance(account.getCashBalance().subtract(amount));
+        updateTradeAccount(account);
         
+    }
+
+    public CashAccountService(TradeAccountRepository repository) {
+        this.repository = repository;
     }
 
     public CashAccount retrieveTradeAccount(String id) {
@@ -28,6 +34,14 @@ public class CashAccountService implements TradeAccountService {
 
     public void updateTradeAccount(CashAccount cashAccount) {
         this.repository.updateTradeAccount(cashAccount);
+    }
+
+    public void createTradeAccount(CashAccount cashAccount) {
+        this.repository.createTradeAccount(cashAccount);
+    }
+
+    public void deleteTradeAccount(String id){
+        this.repository.deleteTradeAccount(id);
     }
     
     
