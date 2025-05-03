@@ -3,6 +3,7 @@ package repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import pojo.MarginAccount;
 import pojo.TradeAccount;
 
 public class TradeAccountRepository {

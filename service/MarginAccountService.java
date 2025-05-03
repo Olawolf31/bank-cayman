@@ -36,4 +36,13 @@ public class MarginAccountService implements TradeAccountService {
     public void updateTradeAccount(MarginAccount account) {
         this.repository.updateTradeAccount(account);
     }
+
+    public void createTradeAccount(MarginAccount marginAccount) {
+        this.repository.createTradeAccount(marginAccount);
+    }
+
+    public void deleteTradeAccount(String id){
+        this.repository.deleteTradeAccount(id);
+    }
+
 }
